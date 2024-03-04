@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  leave_management_db:
+    image: postgres
+    restart: always
+    container_name: leave_management_db
+    ports:
+      - 6543:5432 # map port 6543 on Docker host to 5432 on container
+    environment:
+      - POSTGRES_PASSWORD=pass123
+      - POSTGRES_USER=username
+      - POSTGRES_DB=leave_management_db
